@@ -1,0 +1,399 @@
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../fonts/KumbhSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../fonts/KumbhSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* transfonter.org, если скачивать шрифты с гугла, выбираем фвйлы с названием 24pt */
+/* 400 regular, 500 medium, 600 semibold, 700 bold */
+:root {
+  --color-light: #FFFFFF;
+  --color-accent: #FFD11A;
+  --color-red: #FF5500;
+  --border: 0.0625rem solid var(--color-dark-15);
+  --font-family-base: "Inter", sans-serif;
+  --font-family-accent: "Kumbh Sans", sans-serif;
+  --container-width: 100rem;
+  --container-padding-x: 1rem;
+  --transition-duration: 0.2s;
+  --100vw: calc(100vw - var(--scrollbar-width));
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.time-count {
+  color: #000;
+  box-shadow: 4px 8px 40px rgba(8, 24, 111, 0.2);
+  border-radius: 30px;
+  padding: 15px 10px;
+}
+.time-count__title {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+}
+.time-count__content {
+  display: flex;
+  justify-content: center;
+}
+.time-count__item {
+  min-width: 58px;
+  text-align: center;
+}
+.time-count__val {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+}
+.time-count__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.time-count__separator {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 5px;
+}
+
+/* 
+
+<div class="time-count">
+    <h2 class="time-count__title">До endDate осталось</h2>
+    <div class="time-count__content">
+        <div class="time-count__item time-count__days">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">дней</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__hours">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">часов</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__minutes">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">минут</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__seconds">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">секунд</span>
+        </div>
+    </div>				
+</div>
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hibana", sans-serif;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+section {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+section:nth-child(even) {
+  background-color: #f15412;
+}
+
+section:nth-child(odd) {
+  background-color: #34b3f1;
+}
+
+.title {
+  font-size: 100px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px;
+  }
+}
+footer {
+  height: 40vw;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  font-size: 100px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 30px;
+  }
+}
+.header__container {
+  background-color: #000;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.header__logo {
+  background-color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.icon-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .icon-menu {
+    display: block;
+    width: 30px;
+    height: 18px;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+  }
+  .icon-menu span {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .icon-menu span:first-child {
+    top: 0;
+  }
+  .icon-menu span:last-child {
+    top: auto;
+    bottom: 0;
+  }
+  .icon-menu.active span {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  .icon-menu.active span:first-child {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+  .icon-menu.active span:last-child {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+}
+@media (max-width: 768px) {
+  .menu__body {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+}
+.menu__body.active {
+  left: 0;
+}
+
+.menu__list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 30px;
+    gap: 0;
+    height: 100%;
+    width: 60%;
+    background-color: #f15412;
+    overflow: auto;
+  }
+}
+.menu__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .menu__link {
+    display: block;
+    font-size: 30px;
+    line-height: 70px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

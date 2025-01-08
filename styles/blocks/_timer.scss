@@ -1,0 +1,73 @@
+.time-count {
+    color: #000;
+	box-shadow: 4px 8px 40px rgba(8, 24, 111, 0.2);
+	border-radius: 30px;
+	padding: 15px 10px;
+    &__title {
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        min-width: 58px; //чтобы не прыгала ширина (секунд = секундЫ)
+        text-align: center;
+    }
+
+    &__val {
+        
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    &__separator {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        margin: 0 5px;
+    }
+}
+
+/* 
+
+<div class="time-count">
+    <h2 class="time-count__title">До endDate осталось</h2>
+    <div class="time-count__content">
+        <div class="time-count__item time-count__days">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">дней</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__hours">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">часов</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__minutes">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">минут</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__seconds">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">секунд</span>
+        </div>
+    </div>				
+</div>
+
+*/

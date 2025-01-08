@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <a href="#" class="header__logo" aria-label="Home" title="Home">
+                    <img src="img/logo.svg" alt="logo" class="header__logo-image" width="160" height="40">
+                </a>
+                <div class="header__menu menu">
+                    <div class="menu__icon icon-menu" aria-label="Open menu" title="Open menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="menu__body">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="#about" class="menu__link">Обо мне</a></li>
+                            <li class="menu__item"><a href="#portfolio" class="menu__link">Портфолио</a></li>
+                            <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
+                            <li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
+                            <li class="menu__item"><a href="#subscribe" class="menu__link">Подпишись :)</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="page">
+            <!-- 
+			<section class="page__hero hero">
+				<div class="hero__container">
+					.hero__
+				</div>
+				<div class="hero__image">
+					<img src="img/hero/bg.jpg" alt="background">
+				</div>
+			</section>
+			 -->
+            <section id="about">
+                <div class="title">Обо мне</div>
+                <div class="date"></div>
+            </section>
+            <section id="portfolio">
+                <div class="title">Портфолио
+                    <div class="time-count">
+                        <h2 class="time-count__title">До endDate осталось</h2>
+                        <div class="time-count__content">
+                            <div class="time-count__item time-count__days">
+                                <div class="time-count__val">00</div>
+                                <span class="time-count__text">дней</span>
+                            </div>
+                            <div class="time-count__separator">:</div>
+                            <div class="time-count__item time-count__hours">
+                                <div class="time-count__val">00</div>
+                                <span class="time-count__text">часов</span>
+                            </div>
+                            <div class="time-count__separator">:</div>
+                            <div class="time-count__item time-count__minutes">
+                                <div class="time-count__val">00</div>
+                                <span class="time-count__text">минут</span>
+                            </div>
+                            <div class="time-count__separator">:</div>
+                            <div class="time-count__item time-count__seconds">
+                                <div class="time-count__val">00</div>
+                                <span class="time-count__text">секунд</span>
+                            </div>
+                        </div>				
+                    </div>
+                </div>
+            </section>
+            <section id="reviews">
+                <div class="title">Отзывы</div>
+            </section>
+            <section id="contacts">
+                <div class="title">Контакты</div>
+            </section>
+            <section id="subscribe">
+                <div class="title">Подпишись :)</div>
+            </section>
+        </main>
+        <footer class="footer">Подвал</footer>
+    </div>
+</body>
+</html>

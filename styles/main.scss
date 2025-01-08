@@ -1,0 +1,9 @@
+@use 'normalize';//use вместо import (в пути не пишем нижнее подчеркивание вначале и не пишем расширение scss в конце)
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/timer';
+
+@use 'blocks/header';
