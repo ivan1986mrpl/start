@@ -1,6 +1,4 @@
 
-
-
 function addDate() {
     /* https://www.youtube.com/watch?v=TdurrvcOHgQ */
     function addLeadingZero(d) {// подставляет 0 перед одиночной цифрой
