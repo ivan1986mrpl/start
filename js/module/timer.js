@@ -1,8 +1,8 @@
 
-function timer() {
+function timer(to) {
     /* ================ TIMER ================================================== */
     /* https://www.youtube.com/watch?v=9i4LMsjo0DQ&t=4s */
-    const endDate = new Date().getTime() + 3600000;// таймер обратного отсчета на 1 час (3600000 милисекунд) от теперешней даты
+    const endDate = new Date().getTime() + to;// таймер обратного отсчета на 1 час (3 600 000 милисекунд) от теперешней даты (сутки = 86 400 000мс)
         
     const daysVal = document.querySelector('.time-count__days .time-count__val');
     const hoursVal = document.querySelector('.time-count__hours .time-count__val');
