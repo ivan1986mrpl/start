@@ -18,21 +18,21 @@ function timer(to) {
         return (d < 10) ? '0' + d : d;
     }
 
-    function declOfNum(number, titles) {// подставляет дня, дней, день  
+    function declOfNum(number, titles) {// подставляет дня, дней, день (склонение числительных в javaScript, функция в поиске гугл declOfNum) (функция для склонения имен, склонять как 1 день, три дня, пять дней) 
         let cases = [2, 0, 1, 1, 1, 2];  
         return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
     }
 
     const timeCount = () => {
-        let now = new Date();
-        let leftUntil = endDate - now;
+        let now = new Date();//сегодня сейчас
+        let leftUntil = endDate - now;// осталось милисекунд до 
         
-        let days = Math.floor(leftUntil / 1000 / 60 / 60 / 24);
+        let days = Math.floor(leftUntil / 1000 / 60 / 60 / 24);// Math.floor округляет в нижнюю сторону
         let hours = Math.floor(leftUntil / 1000 / 60 / 60) % 24;
         let minutes = Math.floor(leftUntil / 1000 / 60) % 60;
         let seconds = Math.floor(leftUntil / 1000) % 60;
 
-        daysVal.textContent = addLeadingZero(days);
+        daysVal.textContent = addLeadingZero(days);//записываем время в таймер
         hoursVal.textContent =	addLeadingZero(hours);
         minutesVal.textContent = addLeadingZero(minutes);
         secondsVal.textContent = addLeadingZero(seconds);
@@ -43,8 +43,37 @@ function timer(to) {
         secondsText.textContent = declOfNum(seconds, ['секунда', 'секунды', 'секунд']);
     };
 
-    timeCount();
+    timeCount();//если не вызвать сначала функцию timeCount, то она вызывется через setInterval через секунду и сначала на странице будут нули и только через секунду таймер заработает
     setInterval(timeCount, 1000);
 }
 
 export default timer;
+
+/* если таймер закончится, будут бредовые значения. нужно сделать проверку на отрицательные значения и выводить какое-то сообщение */
+
+/* 
+<div class="time-count">
+    <h2 class="time-count__title">До endDate осталось</h2>
+    <div class="time-count__content">
+        <div class="time-count__item time-count__days">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">дней</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__hours">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">часов</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__minutes">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">минут</span>
+        </div>
+        <div class="time-count__separator">:</div>
+        <div class="time-count__item time-count__seconds">
+            <div class="time-count__val">00</div>
+            <span class="time-count__text">секунд</span>
+        </div>
+    </div>
+</div>
+*/

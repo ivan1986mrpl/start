@@ -212,6 +212,11 @@ h6 {
   margin: 0 auto;
   width: 315px;
 }
+@media (max-width: 410px) {
+  .timer {
+    width: 100%;
+  }
+}
 .timer__title {
   text-align: center;
   font-size: 26px;
@@ -230,6 +235,12 @@ h6 {
   padding: 8px;
   border-radius: 12px;
   box-shadow: 0 0 50px 16px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 410px) {
+  .countdown {
+    padding: 3px;
+    column-gap: 1px;
+  }
 }
 
 .num:not(:last-child) {

@@ -15,6 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
     //headerFon();
     menuInit();
     addDate();
-    timer(86400000);//(3 600 000мс = час, 86 400 000мс = сутки)
-    //initCountdown('.countdown', '14 Jun 2025 11:00');
+    timer(3600000);//(3 600 000мс = час, 86 400 000мс = сутки)
+    initCountdown('.countdown', '30 Jan 2025 11:00');
 });
