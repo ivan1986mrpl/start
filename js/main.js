@@ -6,6 +6,7 @@ import initCountdown from "./module/countdown.js";
 import gettingDay from "./module/getDay.js";
 import gettingMonth from "./module/getMonth.js";
 import modal from "./module/modal.js";
+import scrollUp from "./module/scrollUp.js";
 
 
 
@@ -23,5 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // gettingDay();
     // gettingMonth();
     modal();
+    scrollUp();
 
 });

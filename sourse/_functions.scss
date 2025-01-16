@@ -9,3 +9,35 @@
 }
 
 
+.scroolUp {
+  position: fixed;
+  right: 45px;
+  bottom: -50%;
+  z-index: 100;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .8);
+  transition: bottom 0.3s, transform 0.3s;
+  animation: move 2s infinite linear;
+
+
+  &__icon {
+      max-width: 100%;
+      height: auto;
+  }
+}
+@keyframes move {
+ 0% {
+  transform: translateY(0rem);
+ } 
+ 50% {
+  transform: translateY(-1rem);
+ } 
+ 100% {
+  transform: translateY(0rem);
+ } 
+}
+.show-scroll-btn {
+  bottom: 45px;
+}
