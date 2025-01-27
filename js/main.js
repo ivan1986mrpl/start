@@ -20,7 +20,13 @@ window.addEventListener('DOMContentLoaded', () => {
     menuInit();
     addDate();
     timer(3600000);//(3 600 000мс = час, 86 400 000мс = сутки)
-    initCountdown('.countdown', '30 Jan 2025 11:00');
+
+    // Передача конечной даты
+    // initCountdown('.countdown', '27 Jun 2025 12:30', 'The timer is over');
+
+    // Передача количества секунд (сутки = 86400с) (1 час = 3600секунд)
+     initCountdown('.countdown', 3610, 'The timer is over'); // Таймер на 1 час
+
     // gettingDay();
     // gettingMonth();
     modal();

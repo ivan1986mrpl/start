@@ -1,75 +1,92 @@
-//                 COUNTDOWN (сутки = 86 400 000мс)
-// https://www.youtube.com/watch?v=J1fYmo8K17A
-function initCountdown(parent, to) {
-	let decCache = [],//функция для склонения имен, склонять как 1 день, три дня, пять дней
+function initCountdown(parent, to, timerEndMessage) {
+
+	let decCache = [], //функция для склонения имен, склонять как 1 день, три дня, пять дней (склонение числительных в javaScript, функция в поиске гугл declOfNum)
 		decCases = [2, 0, 1, 1, 1, 2];
 	function decOfNum(number, titles) {
 		if (!decCache[number]) decCache[number] = number % 100 > 4 && number % 100 < 20 ? 2 : decCases[Math.min(number % 10, 5)];
 		return titles[decCache[number]];
 	}
 
+	function addLeadingZero(d) {// подставляет 0 перед одиночной цифрой
+		return d < 10 ? '0' + d : d;
+	}
+
 	let timer;
 	parent && to ? timer = setInterval(countdown, 1000) : null;//если таймер закончился, выдаст null
 
-	function countdown() {
-		let toCountDate;//будущая дата
-		to ? toCountDate = new Date(to) : console.error('Countdown error: no toCountDate mentioned');//(более короткий вариант)
-		let currentDate = new Date();//сегодня
+	let toCountDate; // конечная дата
 
+	// Определяем конечную дату
+	if (typeof to === 'string') {
+		toCountDate = new Date(to); // если передана строка (дата)
+	} else if (typeof to === 'number') {
+		toCountDate = new Date(Date.now() + to * 1000);// если передано количество секунд
+	} else {
+		console.error('Countdown error: invalid "to" argument');
+	}
+
+	function countdown() {
+		let currentDate = new Date();// сегодня
 		let totalSeconds = Math.floor((toCountDate - currentDate) / 1000);//разница дат в секундах
 
 		const seconds = totalSeconds % 60;
 		const minutes = Math.floor((totalSeconds / 60) % 60);
 		const hours = Math.floor((totalSeconds / 3600) % 24);
-		const days = Math.floor((totalSeconds / 86400));
-
-		const rootElements = document.querySelectorAll(parent);// родительский класс таймера
+		const days = Math.floor(totalSeconds / 86400);
+		// Math.floor округляет в нижнюю сторону
+		const rootElements = document.querySelectorAll(parent);//класс родителя таймера
 
 		if (rootElements.length > 0) {
 			rootElements.forEach(root => {
 				if (days > 0 && root.querySelector('.days')) {//проверка на наличие класса в html и если дней < 0, то блок с днями удаляется из разметки
-					root.querySelector('.days .num').textContent = days;
+					root.querySelector('.days .num').textContent = addLeadingZero(days);
 					root.querySelector('.days .name').textContent = decOfNum(days, ['день', 'дня', 'дней']);
 				} else {
 					root.querySelector('.days').style.display = 'none';
 				}
 
-				if (root.querySelector('.hours')) {//проверка на наличие класса в html
-					root.querySelector('.hours .num').textContent = hours;
+				if (root.querySelector('.hours')) {
+					root.querySelector('.hours .num').textContent = addLeadingZero(hours);
 					root.querySelector('.hours .name').textContent = decOfNum(hours, ['час', 'часа', 'часов']);
 				}
 
 				if (root.querySelector('.minutes')) {
-					root.querySelector('.minutes .num').textContent = minutes;
+					root.querySelector('.minutes .num').textContent = addLeadingZero(minutes);
 					root.querySelector('.minutes .name').textContent = decOfNum(minutes, ['минута', 'минуты', 'минут']);
 				}
 
 				if (root.querySelector('.seconds')) {
-					root.querySelector('.seconds .num').textContent = seconds;
+					root.querySelector('.seconds .num').textContent = addLeadingZero(seconds);
 					root.querySelector('.seconds .name').textContent = decOfNum(seconds, ['секунда', 'секунды', 'секунд']);
 				}
 
-				if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {//если таймер закончился, удаляем таймер и выводим сообщение 'The timer is over'
+				if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {//если таймер закончился, удаляем таймер и выводим сообщение, которое предаем третьим аргументом при вызове
 					clearInterval(timer);
-					root.textContent = 'The timer is over'
+					root.textContent = timerEndMessage;
 				}
-			})
+			});
 		} else {
-			console.error('Countdown error: no parent mentioned')//не передали родителя при вызове
+			console.error('Countdown error: no parent mentioned');//не передали родителя при вызове
 		}
 	}
 
-	countdown()
+	countdown();
 }
 
 export default initCountdown;
 
-//initCountdown('.countdown', '29 Jun 2025 17:28')
+// Пример использования:
+// для каждого нового вызова передавать класс таймера, конечную дату в формате '29 Jun 2025 17:28' и сообщение об окончании таймера 'The timer is over'
 
+// Передача конечной даты
+// initCountdown('.countdown', '27 Jun 2025 12:30', 'The timer is over');
 
+// Передача количества секунд (сутки = 86400с) (1 час = 3600секунд) передаем без кавычек
+// initCountdown('.countdown', 86410, 'The timer is over'); // Таймер на 1 день (86400 секунд)
 
 
 /* 
+Добавьте разметку в HTML:
 
 <div class="timer">
 	<div class="timer__title">COUNTDOWN</div>
@@ -94,5 +111,4 @@ export default initCountdown;
 		</div>
 	</div>
 </div>
-
 */
