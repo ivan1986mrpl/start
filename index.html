@@ -1,140 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <script type="module" src="js/main.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Header and menu burger</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="js/script.js" defer></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__container">
-                <a href="#" class="header__logo" aria-label="Home" title="Home">
-                    <img src="img/logo.svg" alt="logo" class="header__logo-image" width="160" height="40">
-                </a>
-                <div class="header__menu menu">
-                    <div class="menu__icon icon-menu" aria-label="Open menu" title="Open menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <nav class="menu__body">
-                        <ul class="menu__list">
-                            <li class="menu__item"><a href="#about" class="menu__link">Обо мне</a></li>
-                            <li class="menu__item"><a href="#portfolio" class="menu__link">Портфолио</a></li>
-                            <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
-                            <li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
-                            <li class="menu__item"><a href="#subscribe" class="menu__link">Подпишись</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <main class="page">
-            <!-- 
-			<section class="page__hero hero">
-				<div class="hero__container">
-					.hero__
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="#" class="header__logo"  aria-label="Home" title="Home"><img src="img/logo-min.svg" alt="logo"></a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#1" class="menu__link hover-link">ItemMenu 1</a></li>
+							<li class="menu__item"><a href="#2" class="menu__link hover-link">ItemMenu 2</a></li>
+							<li class="menu__item"><a href="#3" class="menu__link hover-link">ItemMenu 3</a></li>
+							<li class="menu__item"><a href="#4" class="menu__link hover-link">ItemMenu 4</a></li>
+							<li class="menu__item"><a href="#5" class="menu__link hover-link">ItemMenu 5</a></li>
+						</ul>
+					</nav>
 				</div>
-				<div class="hero__image">
-					<img src="img/hero/bg.jpg" alt="background">
+				<div class="header__actions">
+					<a href="#" class="header__button">Button</a>
+					<button type="button" class="icon-menu" aria-label="Open menu" title="Open menu"><span></span></button>
 				</div>
-			</section>
-			 -->
-            <section id="about">
-
-                <div class="timer">
-                    <div class="timer__title">COUNTDOWN</div>
-                    <div class="timer__wrapper">
-                        <div class="countdown">
-                            <div class="days">
-                                <p class="num">0</p>
-                                <span class="name">День</span>
-                            </div>
-                            <div class="hours">
-                                <p class="num">0</p>
-                                <span class="name">Часов</span>
-                            </div>
-                            <div class="minutes">
-                                <p class="num">0</p>
-                                <span class="name">Минут</span>
-                            </div>
-                            <div class="seconds">
-                                <p class="num">0</p>
-                                <span class="name">Секунды</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-            <section id="portfolio">
-                <div class="date"></div>
-            </section>
-            <section id="reviews">
-
-                <div class="time-count">
-                    <h2 class="time-count__title">До endDate осталось</h2>
-                    <div class="time-count__content">
-                        <div class="time-count__item time-count__days">
-                            <div class="time-count__val">00</div>
-                            <span class="time-count__text">дней</span>
-                        </div>
-                        <div class="time-count__separator">:</div>
-                        <div class="time-count__item time-count__hours">
-                            <div class="time-count__val">00</div>
-                            <span class="time-count__text">часов</span>
-                        </div>
-                        <div class="time-count__separator">:</div>
-                        <div class="time-count__item time-count__minutes">
-                            <div class="time-count__val">00</div>
-                            <span class="time-count__text">минут</span>
-                        </div>
-                        <div class="time-count__separator">:</div>
-                        <div class="time-count__item time-count__seconds">
-                            <div class="time-count__val">00</div>
-                            <span class="time-count__text">секунд</span>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-            <section id="contacts">                
-            </section>
-            <section id="subscribe">
-            </section>
-        </main>
-        <footer class="footer">Подвал</footer>
-
-                    <!-- <button class="modal__btn _modal-open" data-modal-open="modal-1">
-                Click me!
-            </button> -->
-        
-            <!-- <div class="_modal" data-modal="modal-1">
-                <div class="modal-bg">
-                    <div class="modal-body">
-                        <div class="modal-close">close</div>
-                        <div class="modal-content modal-callback">
-                            <div class="modal-callback__title">Перезвоните нам!</div>
-                            <div class="modal-callback__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi qui culpa reprehenderit praesentium. Natus aliquid dolore excepturi quae illo, odit nihil magnam ut vel perferendis! Eos quaerat harum placeat debitis impedit, fugit modi error earum ab. Fuga, eius atque nesciunt incidunt, sint illum aspernatur voluptatem fugit tenetur, doloremque esse facere eos blanditiis. Quo nesciunt itaque tempore sequi recusandae aut. Maiores ex architecto dolorem? Non quidem accusantium, nesciunt consequuntur labore, debitis quas vel iusto nam dolor molestias assumenda fugit nostrum. Dolorem voluptatem vel incidunt autem laudantium molestias dolorum nemo amet porro exercitationem, praesentium asperiores ipsam placeat eveniet delectus eius ab quo impedit accusamus temporibus ullam aperiam minima. Impedit vel dignissimos nobis minima, aperiam provident, assumenda neque, odit magni deserunt sunt autem natus. Consectetur a quasi saepe voluptas, aperiam nemo suscipit illum harum ea modi est tempora? Veniam praesentium recusandae totam inventore architecto, ab cum ad reprehenderit impedit excepturi exercitationem, soluta, similique omnis molestias minus! Corporis tenetur suscipit odio facilis accusantium enim a recusandae necessitatibus reiciendis velit commodi adipisci harum officiis natus, ad debitis officia, quae praesentium deserunt odit eligendi minima. Autem nesciunt cumque magni provident labore blanditiis aliquid recusandae, dignissimos sapiente ducimus atque qui eius ad cupiditate molestiae explicabo. Ratione soluta recusandae expedita vel distinctio ea officia officiis sint voluptates eos! Reiciendis, nobis! Aut, minus dolore, atque soluta ullam velit sequi impedit aspernatur quidem tempora sunt, exercitationem laboriosam mollitia distinctio consequuntur quod vitae. Cupiditate hic deleniti non, rerum explicabo repellat recusandae dolores unde? Consequuntur necessitatibus libero delectus numquam inventore vitae assumenda modi veniam cum explicabo voluptate accusantium facere amet, magnam ad tempora eos maxime eveniet et, illum reiciendis laborum, porro perferendis. Voluptates illum dolorem error corrupti omnis enim quae officia quaerat deleniti odio ad, assumenda ullam laboriosam consectetur esse distinctio ex. Vel deleniti corporis eveniet reiciendis dolores sed explicabo, quibusdam vitae quae minus adipisci nulla itaque provident, minima pariatur repellat harum ad eligendi corrupti suscipit facere fugit nisi. Aut adipisci quidem dignissimos nihil quasi, nemo corrupti recusandae. Rerum molestias voluptates nemo, iusto pariatur, voluptatum similique repellendus architecto inventore amet doloremque non ad magnam aut porro totam hic ea exercitationem iure reiciendis! Quis molestiae odio tempore laborum. Aspernatur architecto suscipit iure asperiores quod vero quas? Laborum expedita recusandae saepe rem et incidunt neque harum adipisci, dolor minima animi ex alias suscipit doloribus, consequuntur laboriosam architecto nisi rerum hic ducimus cupiditate id dignissimos aspernatur pariatur! Autem iste cumque placeat, facilis soluta, recusandae iusto illo exercitationem rem at, illum nisi. Dolore sed expedita veritatis quod nemo cupiditate earum eum dicta sapiente reiciendis dolorem soluta perferendis facere quas, voluptate ipsum quidem minus in quo provident vel rem qui sequi odio. Nesciunt nam sed libero architecto deserunt voluptatibus ducimus voluptates nostrum, consequatur alias iusto aut doloribus iste suscipit velit cumque, autem dolores ex vero quae itaque. Suscipit eos placeat autem animi, fugiat veritatis possimus et necessitatibus delectus sit unde reiciendis eligendi veniam quidem sed numquam beatae voluptate non facere expedita tenetur! Dolor, nihil tempora, eius blanditiis pariatur magnam necessitatibus molestias mollitia repellat perferendis in quam. Ipsam.</div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-        <div class="scroll-up">
-            <svg class="scroll-up__svg" xmlns="" viewBox="-2 -2 52 52">
-                <path class="scroll-up__path" d="
-                M 24,0
-                a24,24 0 0,1 0,48 
-                a24,24 0 0,1 0,-48"/>
-            </svg>
-        </div>
-    </div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="section" id="1">section 1</section>
+			<section class="section" id="2">section 2</section>
+			<section class="section" id="3">section 3</section>
+			<section class="section" id="4">section 4</section>
+			<section class="section" id="5">section 5</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">		
+			</div>
+		</footer>
+	</div>
 </body>
-
 </html>
