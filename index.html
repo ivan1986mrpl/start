@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Header and menu burger</title>
+	<title>start template</title>
 	<link rel="stylesheet" href="css/style.min.css">
 	<script src="js/script.js" defer></script>
 </head>
@@ -32,16 +32,65 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="section" id="1">section 1</section>
-			<section class="section" id="2">section 2</section>
+			<section class="section" id="1">
+				<div class="section__container">
+					<div class="tabcontainer">
+						<div class="tabheader">
+							<ul class="tabheader__items">
+								<li class="tabheader__item tabheader__item_active">title tab № 1</li>
+								<li class="tabheader__item">title tab № 2</li>
+								<li class="tabheader__item">title tab № 3</li>
+								<li class="tabheader__item">title tab № 4</li>
+							</ul>
+						</div>
+						<div class="tabcontent">content tab № 1	</div>
+						<div class="tabcontent">content tab № 2	</div>
+						<div class="tabcontent">content tab № 3	</div>
+						<div class="tabcontent">content tab № 4	</div>
+					</div>
+				</div>
+			</section>
+			<section class="section" id="2"><div class="date"></div> </section>
 			<section class="section" id="3">section 3</section>
-			<section class="section" id="4">section 4</section>
+			<section class="section" id="4">
+				<div class="timer">
+					<div class="timer__title">COUNTDOWN</div>
+					<div class="timer__wrapper">
+						<div class="countdown">
+							<div class="days">
+								<p class="num">0</p>
+								<span class="name">День</span>
+							</div>
+							<div class="hours">
+								<p class="num">0</p>
+								<span class="name">Часов</span>
+							</div>
+							<div class="minutes">
+								<p class="num">0</p>
+								<span class="name">Минут</span>
+							</div>
+							<div class="seconds">
+								<p class="num">0</p>
+								<span class="name">Секунд</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section class="section" id="5">section 5</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">		
 			</div>
 		</footer>
+		<div class="scroll-up">
+            <svg class="scroll-up__svg" xmlns="" viewBox="-2 -2 52 52">
+                <path class="scroll-up__path" d="
+                M 24,0
+                a24,24 0 0,1 0,48 
+                a24,24 0 0,1 0,-48"/>
+            </svg>
+        </div>
 	</div>
 </body>
 </html>
