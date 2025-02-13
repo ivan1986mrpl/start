@@ -111,13 +111,15 @@ body.lock {
     }
 }
 
-@import 'base/tabs';
-@import 'base/toTop';
-@import 'base/countDown.scss';
-// @import 'base/hover';
+ @import 'base/tabs';
+ @import 'base/toTop';
+ @import 'base/countDown.scss';
+ @import 'base/hover';
+ @import 'base/spoller';
 
 
 @import "header";
+@import 'footer';
 
 //тестовые стили, удалить
 .section {
