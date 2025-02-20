@@ -1,40 +1,40 @@
 .timer {
     margin: 0 auto;
-    width: toRem(315);
+    width: rem(315);
     @media (max-width: 410px){
         width: 100%;
     }
     &__title {
         text-align: center;
-        font-size: toRem(26);
+        font-size: rem(26);
         font-weight: 500;
         text-transform: uppercase;
         &:not(:last-child) {
-            margin-bottom: toRem(25);
+            margin-bottom: rem(25);
         }
     }
 }
 .countdown {
-    font-size: toRem(16);
+    font-size: rem(16);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: toRem(8);
-    border-radius: toRem(12);
+    padding: rem(8);
+    border-radius: rem(12);
     box-shadow: 0 0 50px 16px rgba(0, 0, 0, .4);
     @media (max-width: 410px){
-        padding: toRem(3);
+        padding: rem(3);
     }
 }
 .num {
     &:not(:last-child) {
-        margin-bottom: toRem(10);
+        margin-bottom: rem(10);
     }
 }
 .name {
     display: block;
-    min-width: toRem(73);
+    min-width: rem(73);
     text-align: center;
 }
 /* 

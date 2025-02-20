@@ -1,8 +1,8 @@
 .spollers__title {
     width: 100%;
-    padding: toRem(10);
+    padding: rem(10);
     text-align-last: left;
-    font-size: toRem(18);
+    font-size: rem(18);
     position: relative;
     background-color: transparent;
 }
@@ -28,14 +28,14 @@
 // указать свои стили
 
 .spollers {
-    margin: toRem(0) toRem(0) toRem(30) toRem(0);
-    font-size: toRem(16);
+    margin: rem(0) rem(0) rem(30) rem(0);
+    font-size: rem(16);
     &__item {
-        margin: toRem(0) toRem(0) toRem(10) toRem(0);
+        margin: rem(0) rem(0) rem(10) rem(0);
     }
 
     &__text {
-        padding: toRem(0) toRem(10) toRem(10);
+        padding: rem(0) rem(10) rem(10);
         line-height: 1.3;
     }
 }

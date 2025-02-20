@@ -3,12 +3,12 @@
 	@return $result;
 }
 
-@function toRem($px, $current: 16) {
+@function rem($px, $current: 16) {
 	$result: math.div($px, $current) + rem;
 	@return $result;
 }
 
-@function toEm($px, $current: 16) {
+@function em($px, $current: 16) {
 	$result: math.div($px, $current) + em;
 	@return $result;
 }
@@ -28,24 +28,24 @@
 		$widthFrom: $maxWidth;
 	}
 
-	$widthFromMedia: toEm($widthFrom);
-	$widthToMedia: toEm($widthTo);
+	$widthFromMedia: em($widthFrom);
+	$widthToMedia: em($widthTo);
 
 	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
 	$yIntersection: -$widthTo * $slope + $minSize;
 	@if ($yIntersection==0) {
 		$yIntersection: 0.000001;
 	}
-	$flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
+	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
 
-	$propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize) ")"};
+	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
 	@if ($minSize > $startSize) {
-		$propertyValue: #{"clamp(" toRem($startSize) "," $flyValue "," toRem($minSize) ")"};
+		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
 	}
 
 	@if $keepSize != 1 and $keepSize != 3 {
 		@media (min-width: $widthFromMedia) {
-			#{$property}: toRem($startSize);
+			#{$property}: rem($startSize);
 		}
 	}
 	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
@@ -53,12 +53,12 @@
 			#{$property}: $propertyValue;
 		}
 		@supports not (#{$property}: $propertyValue) {
-			#{$property}: calc(#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+			#{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
 		}
 	}
 	@if $keepSize != 1 and $keepSize != 2 {
 		@media (max-width: $widthToMedia) {
-			#{$property}: toRem($minSize);
+			#{$property}: rem($minSize);
 		}
 	}
 }

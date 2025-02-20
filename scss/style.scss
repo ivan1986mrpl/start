@@ -2,7 +2,7 @@
 @import "base/mixins";
 @import url('https://fonts.googleapis.com/css?family=Inter:regular,500&display=swap');
 $fontFamily: "Inter";
-$fontSize: toRem(16);
+$fontSize: rem(16);
 $mainColor: #000;
 $secondColor: #51595f;
 // не переименовывать
@@ -23,49 +23,15 @@ $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
 // Брейк-поїнти
-$pc: toEm($containerWidth);
-$tablet: toEm(991.98);
-$mobile: toEm(767.98);
-$mobileSmall: toEm(479.98);
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
 
 @import "base/null";
+@import 'base/setting';
 
-body.lock {
-	overflow: hidden;
-	touch-action: none;
-	overscroll-behavior: none;
-}
 
-.wrapper {
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	@supports (overflow: clip) {
-		overflow: clip;
-	}
-	> main {
-		flex: 1 1 auto;
-	}
-	> * {//для слайдеров
-		min-width: 0;
-	}
-}
-
-[class*="__container"] {
-	@if ($maxWidthContainer>0) {
-		max-width: toRem($containerWidth);
-		margin: 0 auto;
-	}
-	@if ($containerPadding>0) {
-		@if ($maxWidthContainer>0) {
-			padding: 0 toRem(math.div($containerPadding, 2));
-		} @else {
-			@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
-			@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
-		}
-	}
-}
 
 .hover-link {
     position: relative;
@@ -73,10 +39,10 @@ body.lock {
     &::after{
         content:'';
         position: absolute;
-        bottom: toRem(-3);
+        bottom: rem(-3);
         left: 0;
         width: 0;
-        height: toRem(2);
+        height: rem(2);
         transition: width 0.3s ease 0s;
         background-color: $linkHoverBackground;        
     }
@@ -90,61 +56,11 @@ body.lock {
     }
 }
 
-@import 'base/modal';
 
-.show {
-    display: block;
-}
-.hide {
-    display: none;
-}
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-@keyframes fade {
-    from{
-        opacity: 0.1;
-    }
-    to{
-        opacity: 1;
-    }
-}
 
- @import 'base/tabs';
- @import 'base/toTop';
- @import 'base/countDown.scss';
- @import 'base/hover';
- @import 'base/spoller';
- @import 'base/popup';
+
 
 
 @import "header";
 @import 'footer';
 
-//тестовые стили, удалить
-.section {
-	height: 750px;
-	padding: 120px 50px;
-	font-size: toRem(25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-section:nth-child(even) {
-    background-color: #f15412;
-}  
-section:nth-child(odd) {
-    background-color: #34b3f1;
-}
-.btn {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    outline: none;
-}

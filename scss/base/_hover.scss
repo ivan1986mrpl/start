@@ -1,15 +1,15 @@
 // ===== HOVER =====
-/* 
+ 
 .hover-link {
     position: relative;
     transition: all 0.4s ease 0s;
     &::after{
         content:'';
         position: absolute;
-        bottom: toRem(-3);
+        bottom: rem(-3);
         left: 0;
         width: 0;
-        height: toRem(2);
+        height: rem(2);
         transition: width 0.3s ease 0s;
         background-color: $linkHoverBackground;        
     }
@@ -21,9 +21,9 @@
             width: 100%;
         }
     }
-} */
+} 
 
-/* .hover-scale-filter {
+ /* .hover-scale-filter {
     img {
         width: 100%;
         height: 100%;
@@ -36,22 +36,22 @@
             filter: grayscale(30%);
         }
     }
-} */
+}  */
 
-/* 
-.hover-btn {
+ 
+/* .hover-btn {
     transition: all 0.3s ease 0s;
     @media (any-hover: hover) {
         &:hover {
             transform: scale(1.06);
         }
     }
-} */
+} */ 
 // всплывающие подсказки при наведении
 // если родитель не div, задать display: block;
 // <div class="hover-prompt"><span>описание проекта</span><img src="img/hover/demo.jpg" alt="alt"></div>
-/* 
-.hover-prompt {
+ 
+/* .hover-prompt {
     width: 300px;//
     position: relative;
     overflow: hidden;
@@ -79,11 +79,11 @@
             transform: scale(1) rotate(0);
         }
     }
-} */
+} */ 
 // ========================================
 // <div class="pulse"><img src="img/social-fixed/instagram.svg" alt="button"></div>
-/* 
-.pulse {
+ 
+/* .pulse {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,5 +127,5 @@
         transform: scale(1.2);
         opacity: 0;
     }
-} */
+}  */
 // ====================================

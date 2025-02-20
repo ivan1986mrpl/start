@@ -14,7 +14,7 @@ $iconMenuColor: $mainColor;//burger button
 		@media (max-width:$mobile){//burger
 			display: grid;
 			grid-template-rows: 1fr auto;
-			gap: toRem(25);
+			gap: rem(25);
 			position: fixed;
 			width: 100%;
 			height: 100%;
@@ -22,7 +22,7 @@ $iconMenuColor: $mainColor;//burger button
 			left: -100%;
 			overflow: auto;
 			background-color: $menuBackground;
-			padding: toRem(100) toRem(15) toRem(30) toRem(15);
+			padding: rem(100) rem(15) rem(30) rem(15);
 			transition: left 0.3s;
 			&::before{//подложка безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
 				content:'';
@@ -40,7 +40,7 @@ $iconMenuColor: $mainColor;//burger button
 	&__list {
 		@media (max-width:$mobile){//burger
 			flex-direction: column;
-			column-gap: toRem(20);
+			column-gap: rem(20);
 		}
 	}
 	&__item {
@@ -50,7 +50,7 @@ $iconMenuColor: $mainColor;//burger button
 		display: inline-block;//burger
 		@media (max-width:$mobile){//burger
 			color: $menuColor;//перепишется в header.scss
-			font-size: toRem(28);
+			font-size: rem(28);
 		}
 	}
 }
@@ -69,9 +69,9 @@ $iconMenuColor: $mainColor;//burger button
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: toRem(30);
-		flex: 0 0 toRem(30);
-		height: toRem(18);
+		width: rem(30);
+		flex: 0 0 rem(30);
+		height: rem(18);
 		z-index: 5;
 		@media (any-hover: none) {
 			cursor: default;
@@ -84,7 +84,7 @@ $iconMenuColor: $mainColor;//burger button
 			right: 0;
 			position: absolute;
 			width: 100%;
-			height: toRem(2);
+			height: rem(2);
 			background-color: $iconMenuColor;
 		}
 		&::before {
@@ -94,7 +94,7 @@ $iconMenuColor: $mainColor;//burger button
 			bottom: 0;
 		}
 		span {
-			top: calc(50% - toRem(1));
+			top: calc(50% - rem(1));
 		}
 	}
 }
@@ -109,11 +109,11 @@ $iconMenuColor: $mainColor;//burger button
 			width: 0;
 		}
 		&::before {
-			top: calc(50% - toRem(1));
+			top: calc(50% - rem(1));
 			transform: rotate(-45deg);
 		}
 		&::after {
-			bottom: calc(50% - toRem(1));
+			bottom: calc(50% - rem(1));
 			transform: rotate(45deg);
 		} 
 	}
