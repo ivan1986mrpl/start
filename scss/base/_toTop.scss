@@ -4,7 +4,7 @@ $scrollUpAccentColor: orange;
     position: fixed;
     right: 3rem;
     bottom: 3rem;
-    z-index: 40;//установить меньше z-index header
+    z-index: 5;//установить меньше z-index header и меньше подложки popup
     height: 3rem;
     width: 3rem;
     color: $scrollUpMainColor;
